@@ -3,26 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CashWave - Legal</title>
+    <title>CashWave - Ride the Wave of Rewards</title>
+    <meta name="description" content="Earn real rewards by watching videos, completing surveys, and daily check-ins. Redeem for PayPal, crypto, or gift cards.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a365d; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .container { text-align: center; padding: 40px 20px; }
-        h1 { color: #fff; font-size: 2.5rem; margin-bottom: 10px; }
-        p { color: #a0aec0; margin-bottom: 40px; }
-        .links { display: flex; flex-direction: column; gap: 15px; }
-        a { background: #4299e1; color: #fff; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: 600; transition: background 0.3s; }
-        a:hover { background: #3182ce; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%); padding: 60px 20px; text-align: center; }
+        .logo { font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+        .logo span { color: #60a5fa; }
+        .tagline { font-size: 1.3rem; color: #93c5fd; margin-bottom: 30px; }
+        .download-btn { display: inline-block; background: #22c55e; color: #fff; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s; }
+        .download-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4); }
+
+        /* Stats */
+        .stats { display: flex; justify-content: center; gap: 50px; margin-top: 40px; flex-wrap: wrap; }
+        .stat { text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: 700; color: #fff; }
+        .stat-label { font-size: 0.9rem; color: #93c5fd; }
+
+        /* Container */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Section */
+        .section { padding: 80px 20px; }
+        .section-title { font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 15px; color: #fff; }
+        .section-subtitle { text-align: center; color: #94a3b8; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* Features Grid */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature { background: #1e293b; border-radius: 16px; padding: 30px; transition: transform 0.3s; }
+        .feature:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .feature-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; color: #fff; }
+        .feature-desc { color: #94a3b8; }
+
+        /* How It Works */
+        .steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .step { text-align: center; flex: 1; min-width: 200px; max-width: 250px; }
+        .step-number { width: 60px; height: 60px; background: linear-gradient(135deg, #2563eb, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 20px; }
+        .step-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
+        .step-desc { color: #94a3b8; font-size: 0.95rem; }
+
+        /* Rewards */
+        .rewards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 700px; margin: 0 auto; }
+        .reward { background: #1e293b; border-radius: 12px; padding: 25px; text-align: center; }
+        .reward-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .reward-name { font-weight: 600; }
+
+        /* Screenshots */
+        .screenshots { background: #1e293b; }
+        .screenshot-grid { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; justify-content: center; flex-wrap: wrap; }
+        .screenshot { width: 220px; height: 440px; background: #334155; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 0.9rem; flex-shrink: 0; border: 2px dashed #475569; }
+
+        /* Legal */
+        .legal { background: #1e293b; text-align: center; }
+        .legal-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .legal-links a { color: #60a5fa; text-decoration: none; font-weight: 500; padding: 10px 20px; border: 1px solid #3b82f6; border-radius: 8px; transition: all 0.3s; }
+        .legal-links a:hover { background: #3b82f6; color: #fff; }
+
+        /* Footer */
+        .footer { text-align: center; padding: 40px 20px; color: #64748b; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; margin: 0 15px; }
+        .footer-links a:hover { color: #fff; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo { font-size: 2.2rem; }
+            .tagline { font-size: 1.1rem; }
+            .stats { gap: 30px; }
+            .section-title { font-size: 1.8rem; }
+            .features { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>CashWave</h1>
-        <p>Ride the Wave of Rewards</p>
-        <div class="links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Cash<span>Wave</span></div>
+            <p class="tagline">Ride the Wave of Rewards</p>
+            <a href="https://play.google.com/store/apps/details?id=com.cashwave.cashwave" class="download-btn">
+                Download on Google Play
+            </a>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Downloads</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$50K+</div>
+                    <div class="stat-label">Rewards Paid</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4.5</div>
+                    <div class="stat-label">Star Rating</div>
+                </div>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <!-- Features -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Multiple Ways to Earn</h2>
+            <p class="section-subtitle">Turn your spare time into real rewards with our diverse earning options</p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📺</div>
+                    <h3 class="feature-title">Watch & Earn</h3>
+                    <p class="feature-desc">Watch short video ads to collect points instantly. Simple, easy, and rewarding!</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3 class="feature-title">Complete Surveys</h3>
+                    <p class="feature-desc">Share your opinions through quick surveys and get rewarded for your valuable feedback.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Offerwalls</h3>
+                    <p class="feature-desc">Browse offers from our partners - try new apps, complete tasks, and earn big points.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📅</div>
+                    <h3 class="feature-title">Daily Check-in</h3>
+                    <p class="feature-desc">Open the app daily to claim your check-in bonus. Build streaks for multiplied rewards!</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="feature-title">Refer Friends</h3>
+                    <p class="feature-desc">Invite friends to join CashWave and earn bonus points for every successful referral.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎮</div>
+                    <h3 class="feature-title">Play Games</h3>
+                    <p class="feature-desc">Have fun while earning! Play featured games and collect points as you go.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section" style="background: #1e293b;">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Start earning rewards in just 3 simple steps</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Download & Sign Up</h3>
+                    <p class="step-desc">Download CashWave and create your free account in seconds</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Complete Tasks</h3>
+                    <p class="step-desc">Watch videos, complete surveys, check-in daily, and more</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Cash Out</h3>
+                    <p class="step-desc">Redeem your points for PayPal cash, crypto, or gift cards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Redemption Options</h2>
+            <p class="section-subtitle">Choose how you want to receive your rewards</p>
+            <div class="rewards-grid">
+                <div class="reward">
+                    <div class="reward-icon">💳</div>
+                    <div class="reward-name">PayPal</div>
+                </div>
+                <div class="reward">
+                    <div class="reward-icon">₿</div>
+                    <div class="reward-name">Bitcoin</div>
+                </div>
+                <div class="reward">
+                    <div class="reward-icon">⟠</div>
+                    <div class="reward-name">Ethereum</div>
+                </div>
+                <div class="reward">
+                    <div class="reward-icon">🎁</div>
+                    <div class="reward-name">Gift Cards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section screenshots">
+        <div class="container">
+            <h2 class="section-title">App Screenshots</h2>
+            <p class="section-subtitle">See what CashWave looks like</p>
+            <div class="screenshot-grid">
+                <div class="screenshot">Home Screen</div>
+                <div class="screenshot">Earn Page</div>
+                <div class="screenshot">Offerwalls</div>
+                <div class="screenshot">Wallet</div>
+                <div class="screenshot">Referral</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal -->
+    <section class="section legal">
+        <div class="container">
+            <h2 class="section-title">Legal</h2>
+            <p class="section-subtitle">Read our policies to understand how we protect your data</p>
+            <div class="legal-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="mailto:support@cashwave.app">Contact Support</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms-of-service.html">Terms</a>
+        </div>
+        <p>&copy; 2026 CashWave. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.85rem;">Must be 18+ to redeem cash rewards. Earnings vary by location.</p>
+    </footer>
 </body>
 </html>
